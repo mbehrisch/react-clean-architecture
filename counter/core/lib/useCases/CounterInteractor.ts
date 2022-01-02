@@ -17,7 +17,7 @@ export class CounterInteractor {
   }
 
   increment(qty?: number): Counter {
-    this.counter.increment(qty);
+    this.counter.increment(qty as number);
 
     if (this.counter.count >= this.higherBound) {
       this.counter = new Counter(this.higherBound);
@@ -27,7 +27,7 @@ export class CounterInteractor {
   }
 
   decrement(qty?: number): Counter {
-    this.counter.decrement(qty);
+    this.counter.decrement(qty as number);
 
     if (this.counter.count <= this.lowerBound) {
       this.counter = new Counter(this.lowerBound);
